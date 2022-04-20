@@ -25,6 +25,10 @@ public class User {
         this.age = userDto.getAge();
     }
 
+    public UserDto toDto() {
+        return new UserDto(this.username, this.password, this.age);
+    }
+
     public String getUsername() {
         return username;
     }
