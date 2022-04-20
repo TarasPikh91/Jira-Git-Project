@@ -2,6 +2,7 @@ package com.git.service;
 
 import com.git.db.UserContainer;
 import com.git.domain.User;
+import com.git.dto.UserDto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,8 +16,8 @@ public class UserService {
         this.userContainer = userContainer;
     }
 
-    public void saveUser(User user) {
-        userContainer.addUser(user);
+    public void saveUser(UserDto userDto) {
+        userContainer.addUser(userDto);
     }
 
     public List<User> getAllUsers() {

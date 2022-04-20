@@ -1,28 +1,18 @@
-package com.git.domain;
+package com.git.dto;
 
-import com.git.dto.UserDto;
-import org.springframework.stereotype.Component;
-
-@Component
-public class User {
+public class UserDto {
 
     private String username;
     private String password;
     private Integer age;
 
-    public User() {
+    public UserDto() {
     }
 
-    public User(String username, String password, Integer age) {
+    public UserDto(String username, String password, Integer age) {
         this.username = username;
         this.password = password;
         this.age = age;
-    }
-
-    public User(final UserDto userDto) {
-        this.username = userDto.getUsername();
-        this.password = userDto.getPassword();
-        this.age = userDto.getAge();
     }
 
     public String getUsername() {

@@ -2,6 +2,7 @@ package com.git.controller;
 
 import com.git.db.UserContainer;
 import com.git.domain.User;
+import com.git.dto.UserDto;
 import com.git.service.UserService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,8 +20,8 @@ public class UserRestController {
     }
 
     @PostMapping("/saveUser")
-    public String saveUser(@RequestBody User user) {
-        userService.saveUser(user);
+    public String saveUser(@RequestBody UserDto userDto) {
+        userService.saveUser(userDto);
         List<User> allUsers = userService.getAllUsers();
         return "true";
     }
