@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
@@ -23,8 +24,13 @@ public class UserRestController {
 
     @PostMapping("/saveUser")
     public String saveUser(@RequestBody UserDto userDto) {
-        userService.saveUser(userDto);
         List<User> allUsers = userService.getAllUsers();
+        Optional<User> alreadyExists = allUsers.stream().filter(it -> it.getUsername().equals(userDto.getUsername())).findFirst();
+        if (!alreadyExists.isPresent()) {
+            userService.saveUser(userDto);
+        } else {
+            return "User already exists";
+        }
         return "true";
     }
 
