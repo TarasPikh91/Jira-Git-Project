@@ -1,28 +1,20 @@
-package com.git.domain;
+package com.git.dto;
 
-import com.git.dto.AddressDto;
-import org.springframework.stereotype.Component;
+import com.git.domain.User;
 
-@Component
-public class Address {
+public class AddressDto {
 
     private String street;
     private String city;
     private User user;
 
-    public Address() {
+    public AddressDto() {
     }
 
-    public Address(String street, String city, User user) {
+    public AddressDto(String street, String city, User user) {
         this.street = street;
         this.city = city;
         this.user = user;
-    }
-
-    public Address(final AddressDto addressDto) {
-        this.street = addressDto.getStreet();
-        this.city = addressDto.getCity();
-        this.user = addressDto.getUser();
     }
 
     public String getStreet() {
