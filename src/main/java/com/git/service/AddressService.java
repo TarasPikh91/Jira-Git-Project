@@ -4,6 +4,8 @@ import com.git.db.AddressContainer;
 import com.git.dto.AddressDto;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AddressService {
 
@@ -15,5 +17,9 @@ public class AddressService {
 
     public void saveAddress(final AddressDto addressDto) {
         addressContainer.addAddress(addressDto);
+    }
+
+    public List<AddressDto> getAddresses() {
+        return addressContainer.getAddresses();
     }
 }

@@ -48,4 +48,8 @@ public class Address {
     public void setUser(User user) {
         this.user = user;
     }
+
+    public AddressDto toAddressDto() {
+        return new AddressDto(this.street, this.city, this.user);
+    }
 }

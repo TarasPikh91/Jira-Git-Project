@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class AddressContainer {
@@ -20,4 +21,10 @@ public class AddressContainer {
     }
 
 
+    public List<AddressDto> getAddresses() {
+        if (this.addressList == null) {
+            return new ArrayList<>();
+        }
+        return this.addressList.stream().map(it -> it.toAddressDto()).collect(Collectors.toList());
+    }
 }
