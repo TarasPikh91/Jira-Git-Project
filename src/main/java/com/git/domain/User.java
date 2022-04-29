@@ -9,6 +9,7 @@ public class User {
     private String username;
     private String password;
     private Integer age;
+    private String phone;
 
     public User() {
     }
@@ -51,5 +52,13 @@ public class User {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }
