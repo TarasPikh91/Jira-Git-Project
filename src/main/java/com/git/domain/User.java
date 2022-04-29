@@ -17,17 +17,20 @@ public class User {
     public User() {
     }
 
-    public User(String username, String password, Integer age, List<Address> addresses) {
+    public User(String username, String password, Integer age, List<Address> addresses, String email) {
         this.username = username;
         this.password = password;
         this.age = age;
         this.addresses = addresses;
+        this.email = email;
     }
 
     public User(final UserDto userDto) {
         this.username = userDto.getUsername();
         this.password = userDto.getPassword();
         this.age = userDto.getAge();
+        this.addresses = userDto.getAddresses();
+        this.email = userDto.getEmail();
     }
 
     public String getUsername() {
