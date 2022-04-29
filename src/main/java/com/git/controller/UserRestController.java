@@ -38,4 +38,9 @@ public class UserRestController {
     public List<UserDto> getUsers() {
         return userService.getAllUsers().stream().map(User::toDto).collect(Collectors.toList());
     }
+
+    @GetMapping("/getUserByName")
+    public UserDto getUserByName(@RequestBody String username){
+        return userService.getUserByName(username);
+    }
 }

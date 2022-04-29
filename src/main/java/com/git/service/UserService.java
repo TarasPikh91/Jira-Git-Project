@@ -23,4 +23,8 @@ public class UserService {
     public List<User> getAllUsers() {
         return userContainer.getAllUsers();
     }
+
+    public UserDto getUserByName(String username) {
+        return userContainer.getUserByUsername(username);
+    }
 }

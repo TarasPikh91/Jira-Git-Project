@@ -6,6 +6,8 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 @Component
 public class UserContainer {
@@ -21,5 +23,13 @@ public class UserContainer {
 
     public List<User> getAllUsers() {
         return this.users;
+    }
+
+    public UserDto getUserByUsername(String username) {
+        Optional<User> first = users.stream().filter(it -> it.getUsername().equals(username)).findFirst();
+        if (!first.isPresent()) {
+            throw  new NoSuchElementException("dsf");
+        }
+        return first.get().toDto();
     }
 }
