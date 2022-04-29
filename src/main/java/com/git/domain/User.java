@@ -12,6 +12,7 @@ public class User {
     private String password;
     private Integer age;
     private List<Address> addresses;
+    private String email;
 
     public User() {
     }
@@ -59,5 +60,13 @@ public class User {
 
     public void setAddresses(List<Address> addresses) {
         this.addresses = addresses;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
