@@ -6,7 +6,6 @@ public class UserDto {
     private String password;
     private Integer age;
 
-    // test comment data
 
     public UserDto() {
     }
