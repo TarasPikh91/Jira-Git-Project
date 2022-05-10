@@ -22,4 +22,13 @@ public class UserContainer {
     public List<User> getAllUsers() {
         return this.users;
     }
+
+    public boolean removeUserById(Long userId) {
+        if (this.users == null) {
+            System.out.println("Users list is empty!");
+            return false;
+        }
+
+        return this.users.removeIf(it -> (it.getId() == userId));
+    }
 }

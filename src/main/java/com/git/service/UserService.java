@@ -21,9 +21,14 @@ public class UserService {
     }
 
     public List<User> getAllUsers() {
-        return userContainer.getAllUsers();
+        final List<User> allUsers = userContainer.getAllUsers();
+        if (allUsers.isEmpty()) {
+            System.out.println("User container don't contain any user!");
+        }
+        return allUsers;
     }
 
-    public void deleteUser() {
+    public boolean deleteUser(Long userId) {
+        return userContainer.removeUserById(userId);
     }
 }

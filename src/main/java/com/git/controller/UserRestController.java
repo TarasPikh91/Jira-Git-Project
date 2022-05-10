@@ -27,8 +27,8 @@ public class UserRestController {
         return "Cannot add user to DB";
     }
 
-    public String deleteUser(@RequestBody String userId) {
-        userService.deleteUser();
+    public String deleteUser(@RequestBody Long userId) {
+        userService.deleteUser(userId);
         return "removed";
     }
 }
