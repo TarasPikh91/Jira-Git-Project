@@ -12,11 +12,11 @@ public class UserContainer {
 
     private List<User> users;
 
-    public void addUser(final UserDto userDto) {
+    public boolean addUser(final UserDto userDto) {
         if (users == null) {
             users = new ArrayList<>();
         }
-        users.add(new User(userDto));
+        return users.add(new User(userDto));
     }
 
     public List<User> getAllUsers() {

@@ -21,8 +21,14 @@ public class UserRestController {
 
     @PostMapping("/saveUser")
     public String saveUser(@RequestBody UserDto userDto) {
-        userService.saveUser(userDto);
-        List<User> allUsers = userService.getAllUsers();
-        return "true";
+        if (userService.saveUser(userDto)) {
+            return "User added to DB!";
+        }
+        return "Cannot add user to DB";
+    }
+
+    public String deleteUser(@RequestBody String userId) {
+        userService.deleteUser();
+        return "removed";
     }
 }
