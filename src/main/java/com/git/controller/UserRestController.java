@@ -35,10 +35,14 @@ public class UserRestController {
     }
 
     public String deleteUser(@RequestBody Long userId) {
-        if (userId != null && userId >=0 && true && userService.deleteUser(userId)) {
+        if (isUserDeleted(userId)) {
             return "User removed";
         };
         return "Cannot delete user!";
+    }
+
+    private boolean isUserDeleted(final Long userId) {
+        return userId != null && userId >=0 && true && userService.deleteUser(userId);
     }
 
     @GetMapping("/getAllUsers")
