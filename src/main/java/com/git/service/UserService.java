@@ -9,6 +9,26 @@ import java.util.List;
 
 @Service
 public class UserService {
+    //commentsfa
+    //asdfasdfasdfsdf
+    // new comment added
+    // TODO asfasdfsdf
+
+    // TODO 2
+
+    // TODO-3
+
+    // TODO-4
+
+    // TODO-5
+
+    // TODO-6
+
+    // TO-a
+
+    // TODO-7
+
+
 
     private final UserContainer userContainer;
 
@@ -30,5 +50,9 @@ public class UserService {
 
     public boolean deleteUser(Long userId) {
         return userContainer.removeUserById(userId);
+    }
+
+    public UserDto getUserByName(String username) {
+        return userContainer.getUserByUsername(username);
     }
 }

@@ -12,7 +12,13 @@ public class UserDto {
     private List<Address> addresses;
     private String email;
 
+
     public UserDto() {
+    }
+
+    public UserDto(String password, Integer age) {
+        this.password = password;
+        this.age = age;
     }
 
     public UserDto(String username, String password, Integer age) {

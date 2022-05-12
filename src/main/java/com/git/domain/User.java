@@ -12,6 +12,7 @@ public class User {
     private String username;
     private String password;
     private Integer age;
+    private String phone;
     private List<Address> addresses;
     private String email;
 
@@ -32,6 +33,10 @@ public class User {
         this.age = userDto.getAge();
         this.addresses = userDto.getAddresses();
         this.email = userDto.getEmail();
+    }
+
+    public UserDto toDto() {
+        return new UserDto(this.username, this.password, this.age);
     }
 
     public String getUsername() {
@@ -58,6 +63,14 @@ public class User {
         this.age = age;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+  
     public List<Address> getAddresses() {
         return addresses;
     }
