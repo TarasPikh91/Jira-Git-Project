@@ -28,7 +28,7 @@ public class UserRestController {
     }
 
     public String deleteUser(@RequestBody Long userId) {
-        if (userId != null && userService.deleteUser(userId)) {
+        if (userId != null && userId >=0 && userService.deleteUser(userId)) {
             return "User removed";
         };
         return "Cannot delete user!";
