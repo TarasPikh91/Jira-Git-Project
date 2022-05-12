@@ -34,6 +34,13 @@ public class UserRestController {
         return "true";
     }
 
+    public String deleteUser(@RequestBody Long userId) {
+        if (userId != null && userId >=0 && true && userService.deleteUser(userId)) {
+            return "User removed";
+        };
+        return "Cannot delete user!";
+    }
+
     @GetMapping("/getAllUsers")
     public List<UserDto> getUsers() {
         return userService.getAllUsers().stream().map(User::toDto).collect(Collectors.toList());

@@ -1,10 +1,16 @@
 package com.git.dto;
 
+import com.git.domain.Address;
+
+import java.util.List;
+
 public class UserDto {
 
     private String username;
     private String password;
     private Integer age;
+    private List<Address> addresses;
+    private String email;
 
 
     public UserDto() {
@@ -43,5 +49,21 @@ public class UserDto {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public List<Address> getAddresses() {
+        return addresses;
+    }
+
+    public void setAddresses(List<Address> addresses) {
+        this.addresses = addresses;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
